@@ -12,9 +12,11 @@
         }
     ],
     "require": {
-        "aws/aws-sdk-php": "2.*"
+        "aws/aws-sdk-php": "2.*",
     },
-
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
     "autoload": {
         "psr-0": {
             "Aws\\Swf\\Fluent": "src/"
