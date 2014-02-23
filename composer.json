@@ -12,7 +12,7 @@
         }
     ],
     "require": {
-        "aws/aws-sdk-php": "2.*",
+        "aws/aws-sdk-php": "2.*"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*"
