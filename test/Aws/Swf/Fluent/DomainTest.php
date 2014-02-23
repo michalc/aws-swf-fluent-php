@@ -17,7 +17,7 @@ class DomainTest extends PHPUnit_Framework_TestCase {
     $mockSwfClient = $this->getMockBuilder('Aws\Swf\SwfClient')
             ->disableOriginalConstructor()
             ->getMock();
-    $this->serviceBuilder->set('s3', $mockS3Client);
+    $this->serviceBuilder->set('s3', $mockSwfClient);
 
     $domain->setSwfClient($mockSwfClient);
     $retrievedSwfClient = $domain->getSwfClient();
