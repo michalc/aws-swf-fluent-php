@@ -37,15 +37,15 @@ class WorkflowTest extends PHPUnit_Framework_TestCase {
 
     $workflow->expects($this->once())
       ->method($function)
-      ->with($taskStub);
+      ->with($this->identicalTo($taskStub));
 
     $workflow->expects($this->once())
       ->method('addTask')
-      ->with($taskStub);
+      ->with($this->identicalTo($taskStub));
 
     $workflow->expects($this->once())
       ->method('setLastTask')
-      ->with($taskStub);
+      ->with($this->identicalTo($taskStub));
 
     $returnValue = $workflow->to($taskStub);
 
