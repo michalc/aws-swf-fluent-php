@@ -5,8 +5,6 @@ use Aws\Swf\Fluent\WorkflowTask;
 
 class WorkflowTest extends PHPUnit_Framework_TestCase {
 
-  private $serviceBuilder;
-
   public function testConstructor() {
     $testWorkflowName = 'my-test-workflow';
     $testWorkflowOptions = array('option1' => 'value2');

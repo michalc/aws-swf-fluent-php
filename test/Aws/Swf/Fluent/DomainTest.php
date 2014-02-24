@@ -4,8 +4,6 @@ use Aws\Swf\Fluent\Domain;
 
 class DomainTest extends PHPUnit_Framework_TestCase {
 
-  private $serviceBuilder;
-
   public function testSetAndGetSwfClient() {
     $domain = new Domain();
 
