@@ -140,8 +140,7 @@ class Workflow implements WorkflowItem {
      * @param array $options
      * @return $this
      */
-    public function to($uri, $options = array()) {
-        $task = new WorkflowTask($uri, $options);
+    public function to($task, $options = array()) {
 
         switch ($task->getType()) {
             case WorkflowTask::ACTIVITY_TYPE:
