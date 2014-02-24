@@ -33,7 +33,38 @@ class DomainTest extends PHPUnit_Framework_TestCase {
     $retrievedDomainName = $domain->getDomainName();
 
     $this->assertEquals($testDomainName, $retrievedDomainName);
+  }
 
+  public function testAddWorkflow() {
+    $domain = new Domain();
+    $workflowMock = $this->getMockBuilder('Aws\Swf\Fluent\Workflow')
+            ->disableOriginalConstructor()
+            ->getMock();
+    $domain->addWorkflow($workflowMock);
+
+    $workflows = $domain->getWorkflows();
+    $this->assertEquals($workflowMock, reset($workflows));
+  }
+
+  public function testAddWorkflowByName() {
+    $domain = new Domain();
+    $testWorkflowName = 'my-test-workflow';
+    $testNonExistantWorkflowName = 'my-non-existant-workflow';
+
+    $workflowStub = $this->getMockBuilder('Aws\Swf\Fluent\Workflow')
+            ->setConstructorArgs(array($testWorkflowName))
+            ->getMock();
+    $workflowStub->expects($this->any())
+      ->method('getName')
+      ->will($this->returnValue($testWorkflowName));
+
+    $domain->addWorkflow($workflowStub);
+
+    $retrievedWorkflow = $domain->getWorkflow($testWorkflowName);
+    $this->assertEquals($workflowStub, $retrievedWorkflow);
+
+    $retrievedWorkflow = $domain->getWorkflow($testNonExistantWorkflowName);
+    $this->assertEquals(null, $retrievedWorkflow);
   }
 
 }
