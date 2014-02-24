@@ -7,11 +7,6 @@ class WorkflowTest extends PHPUnit_Framework_TestCase {
 
   private $serviceBuilder;
 
-  public function setUp() {
-    $this->serviceBuilder = Aws::factory();
-    $this->serviceBuilder->enableFacades();
-  }
-
   public function testConstructor() {
     $testWorkflowName = 'my-test-workflow';
     $testWorkflowOptions = array('option1' => 'value2');
