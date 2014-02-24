@@ -73,7 +73,7 @@ class Workflow implements WorkflowItem {
      * @param $workflowName
      * @param $options
      */
-    public function __construct($workflowName, $options) {
+    public function __construct($workflowName, $options = array()) {
         $this->setName($workflowName);
         $this->setOptions($options);
     }
