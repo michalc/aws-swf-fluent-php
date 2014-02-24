@@ -52,7 +52,7 @@ class DomainTest extends PHPUnit_Framework_TestCase {
     $testNonExistantWorkflowName = 'my-non-existant-workflow';
 
     $workflowStub = $this->getMockBuilder('Aws\Swf\Fluent\Workflow')
-            ->setConstructorArgs(array($testWorkflowName))
+            ->disableOriginalConstructor()
             ->getMock();
     $workflowStub->expects($this->any())
       ->method('getName')
