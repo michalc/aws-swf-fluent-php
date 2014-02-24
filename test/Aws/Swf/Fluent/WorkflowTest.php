@@ -47,7 +47,9 @@ class WorkflowTest extends PHPUnit_Framework_TestCase {
       ->method('setLastTask')
       ->with($taskStub);
 
-    $workflow->to($taskStub);
+    $returnValue = $workflow->to($taskStub);
+
+    $this->assertEquals($returnValue, $workflow);
   }
 
   public function testToProvider() {
