@@ -17,12 +17,23 @@ class DomainTest extends PHPUnit_Framework_TestCase {
     $mockSwfClient = $this->getMockBuilder('Aws\Swf\SwfClient')
             ->disableOriginalConstructor()
             ->getMock();
-    $this->serviceBuilder->set('s3', $mockSwfClient);
+    //$this->serviceBuilder->set('s3', $mockSwfClient);
 
     $domain->setSwfClient($mockSwfClient);
     $retrievedSwfClient = $domain->getSwfClient();
 
     $this->assertEquals($mockSwfClient, $retrievedSwfClient);
+  }
+
+  public function testSetAndGetDomainName() {
+    $domain = new Domain();
+    $testDomainName = 'my-test-domain';
+
+    $domain->setDomainName($testDomainName);
+    $retrievedDomainName = $domain->getDomainName();
+
+    $this->assertEquals($testDomainName, $retrievedDomainName);
+
   }
 
 }
