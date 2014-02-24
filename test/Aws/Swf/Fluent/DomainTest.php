@@ -10,8 +10,8 @@ class DomainTest extends PHPUnit_Framework_TestCase {
     $domain = new Domain();
 
     $mockSwfClient = $this->getMockBuilder('Aws\Swf\SwfClient')
-            ->disableOriginalConstructor()
-            ->getMock();
+      ->disableOriginalConstructor()
+      ->getMock();
 
     $domain->setSwfClient($mockSwfClient);
     $retrievedSwfClient = $domain->getSwfClient();
@@ -31,9 +31,11 @@ class DomainTest extends PHPUnit_Framework_TestCase {
 
   public function testAddWorkflow() {
     $domain = new Domain();
+
     $workflowMock = $this->getMockBuilder('Aws\Swf\Fluent\Workflow')
-            ->disableOriginalConstructor()
-            ->getMock();
+      ->disableOriginalConstructor()
+      ->getMock();
+
     $domain->addWorkflow($workflowMock);
 
     $workflows = $domain->getWorkflows();
@@ -46,8 +48,9 @@ class DomainTest extends PHPUnit_Framework_TestCase {
     $testNonExistantWorkflowName = 'my-non-existant-workflow';
 
     $workflowStub = $this->getMockBuilder('Aws\Swf\Fluent\Workflow')
-            ->disableOriginalConstructor()
-            ->getMock();
+      ->disableOriginalConstructor()
+      ->getMock();
+
     $workflowStub->expects($this->any())
       ->method('getName')
       ->will($this->returnValue($testWorkflowName));
@@ -65,8 +68,8 @@ class DomainTest extends PHPUnit_Framework_TestCase {
     $domain = new Domain();
 
     $workflowMock = $this->getMockBuilder('Aws\Swf\Fluent\Workflow')
-            ->disableOriginalConstructor()
-            ->getMock();    
+      ->disableOriginalConstructor()
+      ->getMock();    
 
     $returnValue = $domain->addWorkflow($workflowMock);
 
