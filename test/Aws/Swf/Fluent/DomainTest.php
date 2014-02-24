@@ -67,4 +67,16 @@ class DomainTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals(null, $retrievedWorkflow);
   }
 
+  public function testReturnValueOfAddWorkflow() {
+    $domain = new Domain();
+
+    $workflowMock = $this->getMockBuilder('Aws\Swf\Fluent\Workflow')
+            ->disableOriginalConstructor()
+            ->getMock();    
+
+    $returnValue = $domain->addWorkflow($workflowMock);
+
+    $this->assertEquals($workflowMock, $returnValue);
+  }
+
 }
