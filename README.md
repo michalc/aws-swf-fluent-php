@@ -1,4 +1,4 @@
-# aws-swf-fluent-php [![Build Status](https://travis-ci.org/michalc/aws-swf-fluent-php.png?branch=master)](https://travis-ci.org/michalc/aws-swf-fluent-php)
+# aws-swf-fluent-php [![Build Status](https://travis-ci.org/michalc/aws-swf-fluent-php.png?branch=master)](https://travis-ci.org/michalc/aws-swf-fluent-php) [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/michalc/aws-swf-fluent-php/badges/quality-score.png?s=5b862142c7ea61caa2a629a4a8129c6e6e7d62e9)](https://scrutinizer-ci.com/g/michalc/aws-swf-fluent-php/)
 
 Glue code around aws-sdk-php simple workflow api(Aws\Swf) to allow fluent workflows definition.
 Feedback is welcome.
